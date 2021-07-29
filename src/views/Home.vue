@@ -119,7 +119,7 @@ export default {
         sources: [
           {
             type: "video/mp4",
-            src: require("../assets/videos/meetYou.mp4"), //视频url地址
+            src: "", //视频url地址
           },
         ],
         poster: require("../assets/videos/meetYou.jpg"), //你的封面地址
