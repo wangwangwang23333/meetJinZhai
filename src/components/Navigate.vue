@@ -48,13 +48,6 @@
             maxlength=20
             clearable
             >
-              <!--
-                <el-select v-model="selectSearch" slot="prepend" placeholder="请选择"
-              style="width:80px">
-                <el-option label="民宿" value="1"></el-option>
-                <el-option label="地点" value="2"></el-option>
-              </el-select>
-              -->
               <el-button slot="append" icon="el-icon-search" @click="handleSearchResult()"></el-button>
             </el-input>
           </div>
@@ -93,52 +86,6 @@
 
         </el-menu-item>
 
-        <!--房东个人信息-->
-        <el-submenu index="5" v-if="loginState==2" style="float: right;">
-          <template #title>
-            <!--显示头像-->
-            <el-avatar :size="30" :href='userAvatar' :src="userAvatar" @error="errorHandler">
-              <!--这里是失败时候展示的图片-->
-              <img src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"/>
-            </el-avatar>
-            {{userName}}
-          </template>
-          <el-menu-item index="5-1">
-            <i class="el-icon-info" ></i>
-            个人信息</el-menu-item>
-          <el-menu-item index="5-2">
-            <i class="el-icon-circle-plus"></i>
-            创建房源</el-menu-item>
-          <el-menu-item index="5-4">
-            <i class="el-icon-remove"></i>
-            退出登录</el-menu-item>
-        </el-submenu>
-        <!--顾客个人信息-->
-        <el-submenu index="5" v-if="loginState==1" style="float: right;">
-          <template #title>
-            <!--显示头像-->
-            <el-avatar :size="30" href='https://www.baidu.com/s?wd=%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E7%95%8C%E9%9D%A2' :src="userAvatar" @error="errorHandler">
-              <!--这里是失败时候展示的图片-->
-              <img src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"/>
-            </el-avatar>
-            {{userName}}
-          </template>
-          <el-menu-item index="5-1">
-            <i class="el-icon-info" @click="routerToUserPage"></i>
-            个人信息</el-menu-item>
-          <el-menu-item index="5-2">
-            <i class="el-icon-s-order"></i>
-            我的订单</el-menu-item>
-          <el-menu-item index="5-3">
-            <i class="el-icon-s-ticket"></i>
-            我的礼券</el-menu-item>
-          <el-menu-item index="5-4">
-            <i class="el-icon-remove"></i>
-            退出登录</el-menu-item>
-        </el-submenu>
-        <el-menu-item  v-if="loginState==0" style="float: right;" >
-          <el-link :underline="false" @click="login">登录</el-link>
-        </el-menu-item>
 
       </el-menu>
 
