@@ -2,13 +2,30 @@
   <div class="home">
     begin to work
     <!--视频-->
-    <video-player 
-    class="video-player vjs-custom-skin" 
-    ref="videoPlayer" 
-    :playsinline="true"
-    
-    :options="playerOptions">
-    </video-player>
+    <div style="width: 20%;">
+      <video-player class="video-player vjs-custom-skin" ref="videoPlayer" :playsinline="true" :options="playerOptions">
+      </video-player>
+    </div>
+    <!--金寨地图-->
+    <div style="width: 50%;height: 10%;">
+      金寨：
+      <el-amap vid="1" >
+      </el-amap>
+    </div>
+
+    <!--每日行程-->
+    <el-card>
+      <div slot="header" class="clearfix">
+        <span>每日行程</span>
+        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+      </div>
+      <div>
+        <!--map-->
+
+        我是内容
+      </div>
+    </el-card>
+
   </div>
 </template>
 
@@ -49,6 +66,9 @@ export default {
         },
       },
 
+    
+
+
     }
   },
   created(){
@@ -59,3 +79,16 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+</style>
+
+<style>
+.el-message{
+  min-width: 500px !important;
+  background-color: white !important;
+  background-image:require('@/assets/mountain.png') !important;
+}
+
+</style>

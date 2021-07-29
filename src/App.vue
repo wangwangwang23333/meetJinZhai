@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Navigate />
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -7,6 +8,16 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+  import Navigate from '@/components/Navigate.vue';
+  export default {
+    name: 'App',
+    components: {
+      Navigate,
+    }
+  }
+  </script>
 
 <style>
 #app {
