@@ -2,8 +2,12 @@
   <div class="home">
 
     <el-container style="width: 100%;">
-      <el-aside style="width: 300px;">
-        <video-player class="video-player vjs-custom-skin" ref="videoPlayer" :playsinline="true" :options="playerOptions">
+      <el-aside style="width: 70vw;">
+        <video-player 
+        class="video-player vjs-custom-skin" 
+        ref="videoPlayer" 
+        :playsinline="true" 
+        :options="playerOptions">
         </video-player>
       </el-aside>
       <el-main >
@@ -12,23 +16,12 @@
       </el-main>
     </el-container>
 
-    <!--视频-->
-    <div style="width:50%;margin-left: 25%;">
-      这里放一个宣传片视频
-      
-    </div>
-    <div>
-      你好
-    </div>
-    <!--金寨地图-->
-    <div style="width: 50%;height: 10%;">
-      金寨：
-      <el-amap vid="1" >
-      </el-amap>
-    </div>
+    
+    
+  
 
     <!--每日行程-->
-    <el-card>
+    <el-card style="margin-top: 5vh;">
       <div slot="header" class="clearfix">
         <span>旅行路线</span>
         <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
@@ -113,7 +106,7 @@
     </el-card>
 
     <!--重走长征路-->
-    <el-card>
+    <el-card style="margin-top: 5vh;">
       <div slot="header" class="clearfix">
         <span>重走长征路</span>
       </div>
@@ -142,7 +135,7 @@
     <!--唱一支山歌-->
 
     <!--调研成果-->
-    <el-card>
+    <el-card style="margin-top: 5vh;">
       <div slot="header" class="clearfix">
         <span>调研成果</span>
       </div>
@@ -150,7 +143,7 @@
     </el-card>
 
     <!--游戏-->
-    <el-card>
+    <el-card style="margin-top: 5vh;">
       <div slot="header" class="clearfix">
         <span>游戏访金寨</span>
         <el-button style="float: right; padding: 3px 0" type="text"

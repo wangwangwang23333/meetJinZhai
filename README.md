@@ -1,4 +1,4 @@
-<img src="\src\assets\bigLogo.png" style="width:60%"></img>
+<img src="src\assets\bigLogo.png" style="width:60%"></img>
 
 
 

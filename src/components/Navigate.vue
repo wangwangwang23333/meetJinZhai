@@ -1,7 +1,3 @@
-<!--
-  导航栏
-  by：汪明杰
--->
 
 <template>
     <el-header
@@ -39,37 +35,6 @@
 
         
         
-        <el-menu-item style="margin-left:10%;">
-          <el-divider direction="vertical" >  </el-divider>
-        </el-menu-item>
-
-        <el-menu-item 
-        index="1" 
-        style="padding-left:0% "
-
-        >
-          <i class="el-icon-s-home"></i>
-          首页
-        </el-menu-item>
-        <el-menu-item index="2" style="padding-left:0% " v-if="loginState!=2">
-          <i class="el-icon-star-on"></i>
-          收藏夹
-        </el-menu-item>
-        <el-menu-item index="5-3" style="padding-left:0% " v-else>
-          <i class="el-icon-s-order"></i>
-            我的订单
-        </el-menu-item>
-        <!-- //AUT:CKX -->
-        <el-menu-item index="3" style="padding-left:0% ">
-          <i class="el-icon-document"></i>
-
-          历史足迹</el-menu-item> 
-        
-        <el-menu-item index="4" style="padding-left:0% ">
-          <i class="el-icon-question"></i>
-          帮助
-
-        </el-menu-item>
 
 
       </el-menu>
@@ -119,88 +84,7 @@ export default {
     errorHandler(){
       return true
     },
-    handleSelect(key, keyPath) {
-      //这里表示切换了导航内容，应该更换路由
-      console.log( keyPath);
-      console.log('处理选择信息');
-      if(key==='1'){
-        console.log('前往首页');
-        this.$router.push({path:'/'});
-        return;
-      }
-      if(key==='2'){
-        this.$router.push({path:'/favoritesPage'});
-        return;
-      }
-      if(key==='3'){
-        this.$router.push({path:'/historyDrawer'});
-        return;
-      }
-      if(key==='4'){
-        this.$router.push({path:'/help'});
-      }
-      if (this.loginState==1){
-        if (keyPath[1]==='5-4'){
-          console.log('正在退出登录')
-          //清除token信息
-          this.delLogin();
-          this.loginState=0;
-
-          //前往主页
-          this.$router.push({path:'/'});
-
-          this.$message({
-              message: '注销成功',
-              type: 'success'
-          });
-        }
-        else if (keyPath[1]==='5-1'){
-          console.log('查看顾客个人信息')
-          this.routerToUserPage();
-        }
-        else if (keyPath[1]==='5-2'){
-          this.$router.push({path:'/customerOrder'});
-        }
-        else if (keyPath[1]==='5-3'){
-          this.$router.push({path:'/coupon'});
-        }
-      }
-      else if (this.loginState==2){
-        if (keyPath[0]==='5-3'){
-          this.$router.push({path:'/hostOrder'});
-        }
-        else if (keyPath[1]==='5-1'){
-          console.log('查看房东个人信息')
-          this.routerToHostPage();
-        }
-        else if (keyPath[1]==='5-2'){
-          console.log('进入创建房源界面')
-          localStorage.setItem('stayAlter',JSON.stringify(false));
-          this.$router.push({path:'/become-a-host/type'});
-        }
-        else if (keyPath[1]==='5-4'){
-          console.log('正在退出登录')
-          //清除token信息
-          this.delLogin();
-          this.loginState=0;
-
-          //前往主页
-          this.$router.push({path:'/'});
-
-          this.$message({
-              message: '注销成功',
-              type: 'success'
-          });
-        }
-            
-      }
-      else{
-        if (key=='5'){
-          console.log('打开登录界面')
-        }
-      }
-
-    },
+  
     login(){
       this.dialogTableVisible=true;
       //更新验证码
