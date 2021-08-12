@@ -22,7 +22,7 @@
 
     <!--每日行程-->
     <el-card style="margin-top: 5vh;">
-      <div slot="header" class="clearfix">
+      <div slot="header" class="clearfix" style="font-family:'FZWangDXCJW';font-size:26px;">
         <span>旅行路线</span>
         <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
       </div>
@@ -162,7 +162,7 @@
 
     <!--调研成果-->
     <el-card style="margin-top: 5vh;">
-      <div slot="header" class="clearfix">
+      <div slot="header" class="clearfix" style="font-family:'FZWangDXCJW';font-size:26px;">
         <span>调研成果</span>
       </div>
       这里写我们的问卷调查结果
@@ -170,7 +170,7 @@
 
     <!--游戏-->
     <el-card style="margin-top: 5vh;">
-      <div slot="header" class="clearfix">
+      <div slot="header" class="clearfix" style="font-family:'FZWangDXCJW';font-size:26px;">
         <span>游戏访金寨</span>
         <el-button style="float: right; padding: 3px 0" type="text"
         @click="changeGameState">
