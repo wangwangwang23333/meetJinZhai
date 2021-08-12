@@ -1,8 +1,8 @@
 <template>
   <div class="home">
 
-    <el-container style="width: 100%;">
-      <el-aside style="width: 70vw;">
+    <el-container style="width: 100%;margin-bottom: 5vh;">
+      <el-aside style="width: 60vw;">
         <video-player 
         class="video-player vjs-custom-skin" 
         ref="videoPlayer" 
@@ -10,10 +10,19 @@
         :options="playerOptions">
         </video-player>
       </el-aside>
-      <el-main >
-        金寨县，隶属于安徽省六安市，位于皖西边陲、大别山腹地，地处三省七县二区结合部。西、南两面与河南省、湖北省毗邻，总面积3814平方千米。
+      <el-main style="font-family:FZFWZhu;font-size:20px;text-align: left;">
+        <b style="font-family:'FZWangDXCJW';">&emsp;
+          巍巍大别山，映照着英雄儿女的烈火青春。</b>
+        <br><br>
+        &emsp;&emsp;        金寨县，隶属于安徽省六安市，位于皖西边陲、大别山腹地，地处三省七县二区结合部。西、南两面与河南省、湖北省毗邻，总面积3814平方千米。
 金寨县是安徽省面积最大、人口最多的山区县和旅游资源大县，也是中国第二大将军县，被誉为“红军的摇篮、将军的故乡”，是革命老区。209、210省道纵贯南北，临近312国道；梅山水库、响洪甸水库可常年通航。
+      <br>
+      &emsp;
+      &emsp;
+      在这块土地上，先后走出了59位开国将军、600多位共和国的高级将领，革命薪火在这里生生不息。习近平总书记在2016年4月24日亲临金寨视察，不仅对金寨老区人民为中国革命和建设做出的巨大牺牲和贡献给予了充分肯定和高度赞扬，并对红色文化资源的开发利用、红色基因的传承弘扬做出了重要指示。
+
       </el-main>
+      <el-image :src="require('@/assets/RedHistoryBGI.png')" style="position:absolute;right:0px;bottom:15vh;opacity:0.4;"></el-image>
     </el-container>
 
     
@@ -45,13 +54,14 @@
         :events="polyline.events">
       </el-amap-polyline>
 
-        <div v-for="(marker,index) in markerGroups" :key="marker.index">
+        <div v-for="(marker,index) in markerGroups" :key="marker.index" style="font-family:FZFWZhu;font-size:18px;">
           <el-amap-marker 
           :extData="index" 
           :position="marker.location" 
           :label="marker.label" 
           :icon="require('@/assets/location.png')" 
           :events="markerEvents"
+          style="font-family:FZFWZhu;font-size:18px;"
           >
           </el-amap-marker>
           <!--点击出现关于该地点的介绍-->
@@ -59,6 +69,7 @@
           v-if="marker.window" 
           :position="marker.location" 
           closeWhenClickMap ="true" 
+          style="font-family:FZFWZhu;font-size:18px;"
           autoMove ="true">
           <!--走马灯展示照片-->
           <el-carousel 
@@ -81,28 +92,20 @@
 
           <!--分割线-->
           <el-divider></el-divider>
-
-          {{marker.description}}
+          <p style="font-family:FZFWZhu;font-size:18px;">{{marker.description}}</p>
+          
           </el-amap-info-window>
          </div>
 
         </el-amap>
         </el-main>
-        <el-aside>
-          旅行日志
-          <el-button v-for="index in 6" :key="index"
-          @click="readDiary(index)">
-            8月{{index}}日
-          </el-button>
+        <el-aside style="font-family:FZFWZhu;font-size:18px;">
+          <p style="margin-top: 10%;">我们在这里提供了一条比较好的金寨旅游路线</p>
         </el-aside>
-
+        
       </el-container>
-      <div>
-        <!--map-->
-        
-        
+      
 
-      </div>
     </el-card>
 
     <!--重走长征路-->
@@ -174,24 +177,40 @@
         <span>游戏访金寨</span>
         <el-button style="float: right; padding: 3px 0" type="text"
         @click="changeGameState">
-      <span v-if="gameStart">结束游戏</span>
-      <span v-else>开始游戏</span>
+      <span v-if="gameStart" style="font-family:FZFWZhu;font-size:18px;">结束游戏</span>
+      <span v-else style="font-family:FZFWZhu;font-size:18px;">开始游戏</span>
       </el-button>
       </div>
       <el-container>
         <el-main>
           <game v-if="gameStart"></game>
         </el-main>
-        <el-aside>
-          我们制作了一款[吃金币]的游戏，在游戏的过程中你能够领略到金寨
-          各地的美景。<br>随着吃金币到达所要求的的数量，你就能进入金寨
+        <el-aside style="font-family:FZFWZhu;font-size:18px;text-align: left;">
+          <p style="margin-top: 10%;">
+            我们制作了一款[<b>吃金币</b>]的游戏，在游戏的过程中你能够领略到金寨各地的美景，聆听着悦耳的山歌《八月桂花遍地开》。<br><br>随着吃金币到达所要求的的数量，你就能进入金寨
           的下一个场景，体会另一种风光。
-          <br>
+          <br><br>
           【操作方式】
           <br>
           A 向左移动 D 向右移动
+          <br><br>
+          【游戏说明】
+          <br>
+          ○&emsp;吃金币，获得积分
+          <br>
+          ○&emsp;获得足够的积分以通关
+          <br>
+          ○&emsp;旅途中体会金寨美景
+          <br>
+          ○&emsp;倾听悦耳的山歌
+          <br><br>
+          我们在金寨，等待你的到来
+
+          </p>
         </el-aside>
+        
       </el-container>
+      <el-image :src="require('@/assets/RedHistoryBGI.png')" style="right:-40vw;bottom:20vh;opacity:0.4;"></el-image>
     </el-card>
   </div>
 </template>
