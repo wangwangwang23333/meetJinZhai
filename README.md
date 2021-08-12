@@ -1,6 +1,14 @@
-# meetjinzhai
+<img src="\src\assets\bigLogo.png" style="width:60%"></img>
+
+
+
+2021年暑期实践成果
+点我访问网页：[点我点我](http://8.131.225.65/)
+
+
 
 ## Project setup
+
 ```
 npm install
 ```
