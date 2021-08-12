@@ -108,27 +108,53 @@
     <!--重走长征路-->
     <el-card style="margin-top: 5vh;">
       <div slot="header" class="clearfix">
-        <span>重走长征路</span>
+        <span style="font-family:'FZWangDXCJW';font-size:26px;">重走金寨百年红色历史</span>
       </div>
       <el-timeline>
-        <el-timeline-item timestamp="2018/4/12" placement="top">
+        <!--每一个节点的内容-->
+        <div v-for="(redHistoryItem,index) in redHistoryData" :key="index">
+        <el-timeline-item placement="top" :hide-timestamp="true">
           <el-card>
-            <h4>更新 Github 模板</h4>
-            <p>王小虎 提交于 2018/4/12 20:46</p>
+            <el-container>
+              <el-header style="font-family:'FZZJ';font-size:22px;">{{redHistoryItem.name}}</el-header>
+              <el-container>
+                <!--每一个节点内事件内容-->
+                <el-aside width="50%">
+                  <el-card>
+                    <el-collapse accordion>
+                      <div v-for="(eventItem,index) in redHistoryItem.events" :key="index">
+                      <el-collapse-item>
+                        <template slot="title">
+                          {{eventItem.eventName}}
+                        </template>
+                        <div style="font-family:FZFWZhu;font-size:18px;">{{eventItem.eventContent}}</div>
+                      </el-collapse-item>
+                      </div>
+                    </el-collapse>
+                  </el-card>
+                </el-aside>
+
+                <!--每一个节点内图片照片的内容-->
+                <el-main>
+                  <el-carousel :interval="3000" type="card" height="200px" indicator-position="none">
+                    <div v-for="(ruinsItem,index) in redHistoryItem.ruins" :key="index">
+                    <el-carousel-item v-for="(imageItem,imgIndex) in ruinsItem.ruinsImage" :key="imgIndex">
+                      <el-card class="imageCard" style="height:250px;">
+                        <el-image :src="imageItem" fit="fill" style="width:100%;height:150px;"></el-image>
+                        <div style="font-family:FZFWZhu;font-size:18px;">{{ruinsItem.ruinsName}}</div>
+                      </el-card>
+                    </el-carousel-item>
+                    </div>
+                  </el-carousel>
+                  
+                </el-main>
+              </el-container>
+            </el-container>
+            <el-image :src="require('@/assets/RedHistoryBGI.png')" style="position:absolute;right:0px;bottom:0px;opacity:0.4;"></el-image>
           </el-card>
+          
         </el-timeline-item>
-        <el-timeline-item timestamp="2018/4/3" placement="top">
-          <el-card>
-            <h4>更新 Github 模板</h4>
-            <p>王小虎 提交于 2018/4/3 20:46</p>
-          </el-card>
-        </el-timeline-item>
-        <el-timeline-item timestamp="2018/4/2" placement="top">
-          <el-card>
-            <h4>更新 Github 模板</h4>
-            <p>王小虎 提交于 2018/4/2 20:46</p>
-          </el-card>
-        </el-timeline-item>
+        </div>
       </el-timeline>
     </el-card>
 
@@ -173,6 +199,7 @@
 <script>
 import {videoPlayer} from "vue-video-player";
 import "video.js/dist/video-js.css";
+import redData from "@/assets/json/RedHistory.json"
 import game from '@/components/game.vue';
 
 export default {
@@ -211,6 +238,8 @@ export default {
         },
       },
 
+      //red history
+      redHistoryData:[],
       center: [115.93463, 31.451],
       zoom:10,
       tripDescription:'正在加载，请稍后',
@@ -297,10 +326,11 @@ export default {
       message: '欢迎来到「遇见金寨」',
       type: 'success'
     });
-
     for(let i=0;i<this.markerGroups.length;++i){
       this.polyline.path.push(this.markerGroups[i].location);
     }
+    //redHistory
+    this.redHistoryData=redData;
   },
   methods:{
     changeGameState(){
@@ -326,7 +356,14 @@ export default {
 </script>
 
 <style scoped>
-
+@import "../assets/css/font.css";
+.el-collapse>>>.el-collapse-item__header{
+  font-family: 'FZHeiBJW';
+  font-size: 18px;
+}
+.imageCard>>>.el-card__body{
+  padding:0px;
+}
 </style>
 
 <style>
