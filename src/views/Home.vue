@@ -11,8 +11,8 @@
         </video-player>
       </el-aside>
       <el-main style="font-family:FZFWZhu;font-size:20px;text-align: left;">
-        <b style="font-family:'FZWangDXCJW';">&emsp;
-          巍巍大别山，映照着英雄儿女的烈火青春。</b>
+        <b style="font-family:'FZWangDXCJW';font-size:25px">&emsp;
+          巍巍大别山，映照着英雄儿女的烈火青春</b>
         <br><br>
         &emsp;&emsp;        金寨县，隶属于安徽省六安市，位于皖西边陲、大别山腹地，地处三省七县二区结合部。西、南两面与河南省、湖北省毗邻，总面积3814平方千米。
 金寨县是安徽省面积最大、人口最多的山区县和旅游资源大县，也是中国第二大将军县，被誉为“红军的摇篮、将军的故乡”，是革命老区。209、210省道纵贯南北，临近312国道；梅山水库、响洪甸水库可常年通航。
@@ -99,10 +99,16 @@
 
         </el-amap>
         </el-main>
-        <el-aside style="font-family:FZFWZhu;font-size:18px;">
-          <p style="margin-top: 10%;">我们在这里提供了一条比较好的金寨旅游路线</p>
+        <el-aside style="font-family:FZFWZhu;font-size:18px;width: 30vw;">
+          <p style="margin-top: 10%;text-align: left;">
+            我们在这里提供了一条比较好的金寨旅游路线。沿着我们的路线，就可以一览金寨的红色遗迹，体会那段红色岁月。
+            <br>
+            从抵达【<b>金寨火车站</b>】的那一刻开始，我们的旅途就开始了。我们先到达了【<b>红军广场</b>】，看着高耸的革命烈士纪念塔，瞻仰着红军纪念堂。其后，我们又来到了【<b>梅山水库</b>】，感受着具有综合效益的大型水利水电工程切实发挥的作用。告别了梅山水库，我们前往【<b>天堂寨</b>】。天堂寨古称衡山，又名多云山，是大别山脉第二高峰。它雄踞于皖鄂大别山主峰接壤处，自古为兵家必争之处，帝王巡幸之所，名人登临之境。
+            <br><br>
+            然而，我们的旅途还有很远很远……
+          </p>
         </el-aside>
-        
+        <el-image :src="require('@/assets/RedHistoryBGI.png')" style="position:absolute;right:0px;bottom:-80vh;opacity:0.4;"></el-image>
       </el-container>
       
 
