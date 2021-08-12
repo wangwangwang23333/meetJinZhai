@@ -3,13 +3,13 @@
     <el-header
     style="display: inline-block;width: 100%;margin-bottom: -5px;
     margin-top: -5px;
-    position: fixed;left: 0;z-index: 10;">
+    position: absolute;left: 0;z-index: 10;">
       <el-menu 
       :default-active="activeIndex" 
       class="el-menu-demo" 
       mode="horizontal" 
       
-      @select="handleSelect"
+
       style="
       display: block;
       

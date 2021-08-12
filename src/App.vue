@@ -1,10 +1,11 @@
 <template>
-  <div id="app">
+  <div id="app" style="background-image: url('http://www.ahjinzhai.gov.cn/_res/images/body-bg.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  ">
     <Navigate />
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <br>
+    <br><br><br>
     <router-view/>
   </div>
 </template>

@@ -1,39 +1,37 @@
 <template>
-  <div class="home">
+  <div class="home" >
 
-    <el-container style="width: 100%;margin-bottom: 5vh;">
-      <el-aside style="width: 60vw;">
-        <video-player 
-        class="video-player vjs-custom-skin" 
-        ref="videoPlayer" 
-        :playsinline="true" 
-        :options="playerOptions">
-        </video-player>
-      </el-aside>
-      <el-main style="font-family:FZFWZhu;font-size:20px;text-align: left;">
-        <b style="font-family:'FZWangDXCJW';font-size:25px">&emsp;
-          巍巍大别山，映照着英雄儿女的烈火青春</b>
-        <br><br>
-        &emsp;&emsp;        金寨县，隶属于安徽省六安市，位于皖西边陲、大别山腹地，地处三省七县二区结合部。西、南两面与河南省、湖北省毗邻，总面积3814平方千米。
-金寨县是安徽省面积最大、人口最多的山区县和旅游资源大县，也是中国第二大将军县，被誉为“红军的摇篮、将军的故乡”，是革命老区。209、210省道纵贯南北，临近312国道；梅山水库、响洪甸水库可常年通航。
-      <br>
-      &emsp;
-      &emsp;
-      在这块土地上，先后走出了59位开国将军、600多位共和国的高级将领，革命薪火在这里生生不息。习近平总书记在2016年4月24日亲临金寨视察，不仅对金寨老区人民为中国革命和建设做出的巨大牺牲和贡献给予了充分肯定和高度赞扬，并对红色文化资源的开发利用、红色基因的传承弘扬做出了重要指示。
-
-      </el-main>
-      <el-image :src="require('@/assets/RedHistoryBGI.png')" style="position:absolute;right:0px;bottom:15vh;opacity:0.4;"></el-image>
-    </el-container>
-
-    
-    
+    <el-card style="background:rgba(255,255,255,0.5);
+    ">
+      <el-container style="width: 100%;margin-bottom: 5vh;">
+        <el-aside style="width: 60vw;">
+          <video-player 
+          class="video-player vjs-custom-skin" 
+          ref="videoPlayer" 
+          :playsinline="true" 
+          :options="playerOptions">
+          </video-player>
+        </el-aside>
+        <el-main style="font-family:FZFWZhu;font-size:20px;text-align: left;">
+          <b style="font-family:'FZWangDXCJW';font-size:25px">&emsp;
+            巍巍大别山，映照着英雄儿女的烈火青春</b>
+          <br><br>
+          &emsp;&emsp;        金寨县，隶属于安徽省六安市，位于皖西边陲、大别山腹地，地处三省七县二区结合部。西、南两面与河南省、湖北省毗邻，总面积3814平方千米。
+  金寨县是安徽省面积最大、人口最多的山区县和旅游资源大县，也是中国第二大将军县，被誉为“红军的摇篮、将军的故乡”，是革命老区。209、210省道纵贯南北，临近312国道；梅山水库、响洪甸水库可常年通航。
+        <br>
+        &emsp;
+        &emsp;
+        在这块土地上，先后走出了59位开国将军、600多位共和国的高级将领，革命薪火在这里生生不息。习近平总书记在2016年4月24日亲临金寨视察，不仅对金寨老区人民为中国革命和建设做出的巨大牺牲和贡献给予了充分肯定和高度赞扬，并对红色文化资源的开发利用、红色基因的传承弘扬做出了重要指示。
   
+        </el-main>
+        <el-image :src="require('@/assets/RedHistoryBGI.png')" style="position:absolute;right:0.5vw;bottom:3.8vh;opacity:0.4;"></el-image>
+      </el-container>
+    </el-card>
 
     <!--每日行程-->
     <el-card style="margin-top: 5vh;">
       <div slot="header" class="clearfix" style="font-family:'FZWangDXCJW';font-size:26px;">
         <span>旅行路线</span>
-        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
       </div>
       <el-container>
         <el-main>
@@ -99,7 +97,7 @@
 
         </el-amap>
         </el-main>
-        <el-aside style="font-family:FZFWZhu;font-size:18px;width: 30vw;">
+        <el-aside style="font-family:FZFWZhu;font-size:20px;width: 30vw;">
           <p style="margin-top: 10%;text-align: left;">
             我们在这里提供了一条比较好的金寨旅游路线。沿着我们的路线，就可以一览金寨的红色遗迹，体会那段红色岁月。
             <br>
@@ -108,7 +106,7 @@
             然而，我们的旅途还有很远很远……
           </p>
         </el-aside>
-        <el-image :src="require('@/assets/RedHistoryBGI.png')" style="position:absolute;right:0px;bottom:-80vh;opacity:0.4;"></el-image>
+        <el-image :src="require('@/assets/RedHistoryBGI.png')" style="position:absolute;right:0.5vw;bottom:-93vh;opacity:0.4;"></el-image>
       </el-container>
       
 
@@ -169,16 +167,10 @@
 
     <!--唱一支山歌-->
 
-    <!--调研成果-->
-    <el-card style="margin-top: 5vh;">
-      <div slot="header" class="clearfix" style="font-family:'FZWangDXCJW';font-size:26px;">
-        <span>调研成果</span>
-      </div>
-      这里写我们的问卷调查结果
-    </el-card>
+    
 
     <!--游戏-->
-    <el-card style="margin-top: 5vh;">
+    <el-card style="margin-top: 5vh;padding-bottom: 10px !important;height: 100vh !important;">
       <div slot="header" class="clearfix" style="font-family:'FZWangDXCJW';font-size:26px;">
         <span>游戏访金寨</span>
         <el-button style="float: right; padding: 3px 0" type="text"
@@ -192,7 +184,7 @@
           <game v-if="gameStart"></game>
           <el-image v-else :src="require('@/assets/gameWait.png')"></el-image>
         </el-main>
-        <el-aside style="font-family:FZFWZhu;font-size:18px;text-align: left;">
+        <el-aside style="font-family:FZFWZhu;font-size:19px;text-align: left;">
           <p style="margin-top: 10%;">
             我们制作了一款[<b>吃金币</b>]的游戏，在游戏的过程中你能够领略到金寨各地的美景，聆听着悦耳的山歌《八月桂花遍地开》。<br><br>随着吃金币到达所要求的的数量，你就能进入金寨
           的下一个场景，体会另一种风光。
@@ -218,7 +210,21 @@
         
       </el-container>
       <el-image :src="require('@/assets/RedHistoryBGI.png')" style="right:-40vw;bottom:20vh;opacity:0.4;"></el-image>
+      
     </el-card>
+
+    <!--调研成果-->
+    <el-card style="margin-top: 5vh;">
+      <div slot="header" class="clearfix" style="font-family:'FZWangDXCJW';font-size:26px;">
+        <span>调研成果</span>
+      </div>
+      <el-image :src="require('@/assets/survey.png')"
+      style="width: 80%;"></el-image>
+    </el-card>
+
+    <el-image :src="require('@/assets/bigLogo.png')" style="width: 15%;margin-top: 5%"></el-image>
+    <br>
+    <p style="font-family:FZFWZhu;font-size:18px;">等你一起探索……</p>
   </div>
 </template>
 
@@ -324,8 +330,54 @@ export default {
             require("../assets/trival/3-1.png"),
             require("../assets/trival/3-2.png"),
           ],
-          description:'梅山水库。',
+          description:'梅山水库位于鄂、豫、皖三省交界处的大别山腹地、淮河支流史河上游，坐落于有“红军故乡、将军摇篮”之誉的安徽省金寨县县城南端。它位于史河上游，坝址在安徽省金寨县梅山镇大小梅山之间。北距史河入淮口130km，是一座以防洪、灌溉为主，兼有发电等综合效益的大型水利水电工程。',
           location:[115.89025486920164,31.660259990005017]
+        },
+        {
+          index:4,
+          window:false,
+          label:{
+            content:'悬剑山风景区',
+            offset:[2,47],
+            direction:'center'
+          },
+          photo:[
+            require("../assets/trival/6-1.png"),
+            require("../assets/trival/6-2.png"),
+          ],
+          description:'清人陈自卿聚义士起义，置兵书、挂宝剑于峰顶，以示天意，故尔得名。悬剑山覆盖面积25平方公里，有景点50余处，其中待命名30余处，植被完整，物种多样，具有丰富的旅游资源。2000年，县宗教局、旅游局批准，悬剑山为宗教旅游区。',
+          location:[115.71805832641598,31.599636909852173]
+        },
+        {
+          index:5,
+          window:false,
+          label:{
+            content:'天堂寨',
+            offset:[2,47],
+            direction:'center'
+          },
+          photo:[
+            require("../assets/trival/4-1.png"),
+            require("../assets/trival/4-2.png"),
+            require("../assets/trival/4-3.png"),
+          ],
+          description:'天堂寨是大别山第二高峰，由十一届全国人大常委会委员长吴邦国先生题字。位于安徽省金寨县与湖北省罗田县交界的地区，有“华东最后一片原始森林、植物的王国、花的海洋”的美称。',
+          location:[115.806150,31.199840]
+        },
+        {
+          index:6,
+          window:false,
+          label:{
+            content:'燕子河大峡谷',
+            offset:[2,47],
+            direction:'center'
+          },
+          photo:[
+            require("../assets/trival/5-1.png"),
+            require("../assets/trival/5-2.png"),
+          ],
+          description:'燕子河大峡谷位于安徽省六安市金寨县境内，由著名书画家启功先生题字。与华东最后一片原始森林天堂寨毗邻，峡谷奇峡绵延，以险崖、奇石、幽谷、秀水而著称',
+          location:[115.89589951293942,31.244699681850488]
         },
       ],
 
@@ -363,19 +415,7 @@ export default {
       this.gameStart=!this.gameStart;
     },
     readDiary(date){
-      console.log('开始阅读日志')
-      if(date==1){
-        this.$message({
-          message: '8月1日的日志还没有出炉哦!',
-          type: 'info'
-        });
-      }
-      else{
-        this.$message({
-          message: '8月'+date+'日的日志还没有出炉哦!',
-          type: 'info'
-        });
-      }
+      date;
     }
   }
 }
@@ -393,6 +433,8 @@ export default {
 </style>
 
 <style>
+
+
 .el-message{
   min-width: 500px !important;
   background-color: white !important;
