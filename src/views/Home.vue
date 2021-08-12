@@ -1,13 +1,14 @@
 <template>
   <div class="home">
 
-    <el-container>
-      <el-aside>
+    <el-container style="width: 100%;">
+      <el-aside style="width: 300px;">
         <video-player class="video-player vjs-custom-skin" ref="videoPlayer" :playsinline="true" :options="playerOptions">
         </video-player>
       </el-aside>
-      <el-main>
-
+      <el-main >
+        金寨县，隶属于安徽省六安市，位于皖西边陲、大别山腹地，地处三省七县二区结合部。西、南两面与河南省、湖北省毗邻，总面积3814平方千米。
+金寨县是安徽省面积最大、人口最多的山区县和旅游资源大县，也是中国第二大将军县，被誉为“红军的摇篮、将军的故乡”，是革命老区。209、210省道纵贯南北，临近312国道；梅山水库、响洪甸水库可常年通航。
       </el-main>
     </el-container>
 
@@ -174,6 +175,31 @@
       这里写我们的问卷调查结果
     </el-card>
 
+    <!--游戏-->
+    <el-card>
+      <div slot="header" class="clearfix">
+        <span>游戏访金寨</span>
+        <el-button style="float: right; padding: 3px 0" type="text"
+        @click="changeGameState">
+      <span v-if="gameStart">结束游戏</span>
+      <span v-else>开始游戏</span>
+      </el-button>
+      </div>
+      <el-container>
+        <el-main>
+          <game v-if="gameStart"></game>
+        </el-main>
+        <el-aside>
+          我们制作了一款[吃金币]的游戏，在游戏的过程中你能够领略到金寨
+          各地的美景。<br>随着吃金币到达所要求的的数量，你就能进入金寨
+          的下一个场景，体会另一种风光。
+          <br>
+          【操作方式】
+          <br>
+          A 向左移动 D 向右移动
+        </el-aside>
+      </el-container>
+    </el-card>
   </div>
 </template>
 
@@ -181,15 +207,18 @@
 import {videoPlayer} from "vue-video-player";
 import "video.js/dist/video-js.css";
 import redData from "@/assets/json/RedHistory.json"
+import game from '@/components/game.vue';
 
 export default {
   name: 'Home',
   components: {
-    videoPlayer
+    videoPlayer,
+    game
   },
   data(){
     const self=this;
     return{
+      gameStart:false,
       playerOptions: {
         playbackRates: [0.5,1.0,  2.0], //播放速度
         autoplay: true, //如果true,浏览器准备好时开始回放。
@@ -311,6 +340,9 @@ export default {
     this.redHistoryData=redData;
   },
   methods:{
+    changeGameState(){
+      this.gameStart=!this.gameStart;
+    },
     readDiary(date){
       console.log('开始阅读日志')
       if(date==1){

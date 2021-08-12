@@ -37,22 +37,7 @@
           </el-image>
         </el-menu-item>
 
-        <el-menu-item style="width: 30%;">
-          <!--搜索框-->
-          <div style="width:100%; margin-left: 50px;">
-            <el-input 
-            placeholder="从这里开始，寻找你的归宿" 
-            v-model="searchText" 
-            class="input-with-select"
-            size='medium'
-            maxlength=20
-            clearable
-            >
-              <el-button slot="append" icon="el-icon-search" @click="handleSearchResult()"></el-button>
-            </el-input>
-          </div>
-
-        </el-menu-item>
+        
         
         <el-menu-item style="margin-left:10%;">
           <el-divider direction="vertical" >  </el-divider>
