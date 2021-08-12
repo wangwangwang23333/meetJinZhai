@@ -190,6 +190,7 @@
       <el-container>
         <el-main>
           <game v-if="gameStart"></game>
+          <el-image v-else :src="require('@/assets/gameWait.png')"></el-image>
         </el-main>
         <el-aside style="font-family:FZFWZhu;font-size:18px;text-align: left;">
           <p style="margin-top: 10%;">
